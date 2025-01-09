@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/@better-scroll/core@latest/dist/core.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@better-scroll/core@latest/dist/core.min.js"></script>
+</head>
+<body>
+<div class="bg">
+    <div class="top">
+        <div class="left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+                <g fill="none">
+                    <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/>
+                    <path fill="currentColor"
+                          d="M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 1 1 0-3z"/>
+                </g>
+            </svg>
+        </div>
+        <div class="middle">
+            <label>
+                <input type="text" placeholder="Love Is Gone (Acoustic)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" class="search"
+                     text-anchor="middle">
+                    <path fill="currentColor"
+                          d="m19.485 20.154l-6.262-6.262q-.75.639-1.725.989t-1.96.35q-2.402 0-4.066-1.663T3.808 9.503T5.47 5.436t4.064-1.667t4.068 1.664T15.268 9.5q0 1.042-.369 2.017t-.97 1.668l6.262 6.261zM9.539 14.23q1.99 0 3.36-1.37t1.37-3.361t-1.37-3.36t-3.36-1.37t-3.361 1.37t-1.37 3.36t1.37 3.36t3.36 1.37"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" class="scan"
+                     text-anchor="middle">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 7V5a2 2 0 0 1 2-2h2m10 0h2a2 2 0 0 1 2 2v2m0 10v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2m4-5h10"/>
+                </svg>
+            </label>
+        </div>
+        <div class="right">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                 role="img" width="100" height="100" viewBox="0 0 24 24"
+                 class="dark:text-[#e8eaf2] text-[#3A455B] iconify iconify--material-symbols">
+                <path fill="currentColor"
+                      d="m5 10l-.95-2.05L2 7l2.05-.95L5 4l.95 2.05L8 7l-2.05.95L5 10Zm13-3l-.625-1.375L16 5l1.375-.625L18 3l.625 1.375L20 5l-1.375.625L18 7Zm2 4l-.625-1.375L18 9l1.375-.625L20 7l.625 1.375L22 9l-1.375.625L20 11Zm-8 4q-1.25 0-2.125-.875T9 12V6q0-1.25.875-2.125T12 3q1.25 0 2.125.875T15 6v6q0 1.25-.875 2.125T12 15Zm0-6Zm-1 13v-3.075q-2.6-.35-4.3-2.325T5 12h2q0 2.075 1.463 3.538T12 17q2.075 0 3.538-1.463T17 12h2q0 2.625-1.7 4.6T13 18.925V22h-2Zm1-9q.425 0 .713-.288T13 12V6q0-.425-.288-.713T12 5q-.425 0-.713.288T11 6v6q0 .425.288.713T12 13Z"></path>
+            </svg>
+        </div>
+    </div>
+
+
+    <div class="swiper">
+        <div class="swiper-wrapper" id="swiperWrapper">
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="wrapper">
+        <div class="content">
+<!--            <div>-->
+<!--                <div class="content-div-img" style="background-image: url('https://p5.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/15074830113/85e7/8d98/b8ff/72f4cf2c50f250719c1db11ac4638de8.png')"></div>-->
+<!--                <div class="content-div-text">私人FM</div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+
+</div>
+<div class="songList">
+    <div class="songListTop">
+        <div class="songListTitle">每日推荐 ></div>
+        <div class="songListMore"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 1024 1024"><path fill="currentColor" d="M456 231a56 56 0 1 0 112 0a56 56 0 1 0-112 0m0 280a56 56 0 1 0 112 0a56 56 0 1 0-112 0m0 280a56 56 0 1 0 112 0a56 56 0 1 0-112 0"/></svg></div>
+    </div>
+    <div class="songListWrapper">
+        <div class="songListContent">
+            <div class="songList-item-parent">
+<!--                <div class="songList-item">-->
+<!--                    <div class="songList-div-shadow"></div>-->
+<!--                    <div class="songList-div-img" style="background-image: url('http://p2.music.126.net/XET3YcQBcYDLsN2ihTN_sg==/109951165238020418.jpg')"></div>-->
+<!--                    <div class="songList-div-text">私人FM</div>-->
+<!--                </div>-->
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="./js/script.js"></script>
+<script>
+    let wrapper = document.querySelector('.wrapper')
+    let scroll = new BScroll(wrapper,{
+        scrollX: true,
+        click: true
+    })
+
+    let songListWrapper = document.querySelector('.songListWrapper')
+    let songListScroll = new BScroll(songListWrapper,{
+        scrollX: true,
+        click: true
+    })
+</script>
+</html>

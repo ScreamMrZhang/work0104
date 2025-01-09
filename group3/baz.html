@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baz</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.12.3/qs.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>
+</head>
+<body>
+<h1>baz</h1>
+<button class="update">修改数据</button>
+</body>
+<script>
+var btn = document.querySelector(".update");
+var originValue = localStorage.getItem('a');
+btn.addEventListener("click", function () {
+    var target = window.open("./bar.html","_blank");
+    target.onstorage = function () {
+        var currentValue = localStorage.getItem('a');
+        if (originValue !== currentValue) {
+            console.log("你的数据更新了");
+            originValue=currentValue;
+        }
+    }
+    localStorage.setItem("a",123);
+})
+</script>
+</html>

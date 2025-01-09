@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.12.3/qs.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST","http://192.168.68.178:3000/api/baz");
+    xhr.setRequestHeader("Content-Type","application/json");
+    xhr.onreadystatechange = function(e) {
+        if (this.readyState === 4 && this.status === 201) {
+            var contentType = this.getResponseHeader("content-type");
+            var responseData = null;
+            var isJson = contentType && contentType.indexOf('application/json')>-1;
+            if (isJson){
+                responseData = JSON.parse(this.response);
+            }
+            console.log(responseData);
+        }
+    }
+    xhr.send(JSON.stringify({"name":"我直接","desc":"起飞"}));
+
+     */
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST","http://192.168.68.178:3000/api/baz?");
+    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function(e) {
+        // console.log(this === e.target);
+        // var responseHeaders = this.getAllResponseHeaders();
+
+        if (xhr.readyState === 4 && xhr.status === 201) {
+            var contentType = this.getResponseHeader("content-type");
+            var isJson = contentType && contentType.indexOf('application/json')>-1;
+            if (isJson){
+                console.log(JSON.parse(this.response))
+            }
+        }
+    }
+    xhr.send(Qs.stringify({name:"坤坤",age:20,favorite:['唱','跳','rap','篮球']}));
+
+    function post(url, config) {
+        var defaultConfig={contentType: "application/json",data:{}};
+        config = _.merge(config, defaultConfig);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST",url);
+        xhr.onreadystatechange = function(e) {
+
+            if (xhr.readyState === 4 && xhr.status === 201) {
+                var contentType = this.getResponseHeader("content-type");
+                var isJson = contentType && contentType.indexOf('application/json')>-1;
+                if (isJson){
+                    console.log(JSON.parse(this.response))
+                }
+            }
+        }
+    }
+
+    post("http://192.168.68.178:3000/api/baz", {
+        contentType: "application/x-www-form-urlencoded",
+        data: {name:"坤坤",age:20,favorite:['唱','跳','rap','篮球']},
+        success: function(res) {
+            console.log(res)
+        },
+        fail: function(res) {
+            console.log(res)
+        }
+    })
+
+
+
+</script>
+</html>

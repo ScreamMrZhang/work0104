@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var promise = new Promise(function (resolve, reject) {
+        setTimeout(function () {},1000)
+    })
+    // pending(等待) -> resolve() -> success
+    // pending(等待) -> reject() -> fail
+    // 如果then方法的回调函数的返回值不是Promise的实例 则使用立即兑现的Promise的语法 Promise.resolve(value)
+
+    function delayEcho(value, duration) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve(value)
+            },duration)
+        })
+    }
+
+    delayEcho(1,1000)
+        .then(function (result) {
+            console.log(result)
+            return delayEcho(2,2000)
+        })
+        .then(function (result) {
+            console.log(result)
+            return delayEcho(3,3000)
+        })
+        .then(function (result) {
+            console.log(result)
+            return delayEcho(4,4000)
+        })
+        .then(function (result) {
+            console.log(result)
+            return delayEcho(5,5000)
+        });
+
+    async function bar() {
+        try{
+            var res =await delayEcho(1,1000);
+            console.log(res);
+        }catch(err){
+
+        }
+    }
+
+
+</script>
+</html>

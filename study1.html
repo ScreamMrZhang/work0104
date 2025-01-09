@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
-
+<form method="POST" action="https://netease-cloud-music-api-five-roan-88.vercel.app/search">
+    <input type="text" name="keywords" value="海阔天空">
+    <input type="number" name="limit" value="10">
+    <input type="submit">
+</form>
 </body>
+<script>
+    // 通过post请求传递数据的格式 json 表单 from-data
+    // {name:'坤坤',age:28 }
+    // JSON和JS纯对象的区别：
+    // 1、所有JSON对象的属性都必须是双引号包裹
+    // 2、所有JSON对象属性值对应的类型出了字符串一切照旧（字符串需要使用双引号包裹）
+    // 3、JSON对象是一种特殊的JS对象
+
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("GET","https://netease-cloud-music-api-five-roan-88.vercel.app/search?keywords=海阔天空&limit=5");
+    // xhr.onreadystatechange = function(e) {
+    //     // console.log(this === e.target);
+    //     // var responseHeaders = this.getAllResponseHeaders();
+    //
+    //     if (xhr.readyState === 4 && xhr.status === 200) {
+    //         var contentType = this.getResponseHeader("content-type");
+    //         var isJson = contentType && contentType.indexOf('application/json')>-1;
+    //         if (isJson){
+    //             console.log(JSON.parse(this.response))
+    //         }
+    //     }
+    // }
+    // xhr.send();
+
+
+
+
+
+
+</script>
+
 </html>

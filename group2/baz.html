@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baz</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.12.3/qs.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>
+</head>
+<body>
+<h1>baz</h1>
+</body>
+<script>
+    var params = Cookies.get("params");
+    console.log(Qs.parse(params));
+</script>
+</html>

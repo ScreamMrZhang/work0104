@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baz</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.12.3/qs.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>
+</head>
+<body>
+<h1>baz</h1>
+<button class="update">修改数据</button>
+</body>
+<script>
+    var channel = new BroadcastChannel('abc');
+    channel.addEventListener("message", function (e) {
+        console.log(e.data.message);
+        channel.postMessage({msg:`收到你发的数据:${e.data.message}`});
+    })
+</script>
+</html>

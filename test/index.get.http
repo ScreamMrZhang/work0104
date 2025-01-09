@@ -1,0 +1,7 @@
+#GET https://netease-cloud-music-api-five-roan-88.vercel.app/search HTTP/1.1
+
+
+POST https://netease-cloud-music-api-five-roan-88.vercel.app/search HTTP/1.1
+Content-Type: application/json
+
+{"keywords":"海阔天空","limit":5}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bar</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.12.3/qs.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>
+</head>
+<body>
+<h1>bar</h1>
+<a href="./baz.html" target="_blank">baz</a>
+<button class="open">open</button>
+</body>
+
+<script>
+    document.documentElement.addEventListener("click", function () {
+        var params={name:'ikun',age:18};
+        Cookies.set("id", "888");
+        var s = Qs.stringify(params);
+        console.log(s)
+        Cookies.set("params",s );
+        window.open("./baz.html", "_blank");
+    })
+</script>
+</html>

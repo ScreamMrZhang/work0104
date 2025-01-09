@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input class="file" type="file">
+    <button class="upload">上传</button>
+</div>
+</body>
+<script>
+    // FormData
+    var fileInput = document.querySelector(".file");
+    var uploadButton = document.querySelector(".upload");
+    var file = null;
+    fileInput.addEventListener("change", function (e) {
+        file = e.target.files[0];
+    })
+
+    uploadButton.addEventListener("click", function () {
+        if (!file) return alert("请选择你需要上传的文件");
+
+        var fd = new FormData();
+        //key-value
+        //"file"-file(二进制数据)
+        fd.append("file", file);
+        upload("http://192.168.68.178:3000/api/upload",fd);
+    })
+
+    function upload(url, fd) {
+        if (!(fd instanceof FormData)) return;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST",url);
+        // xhr.setRequestHeader("Content-Type","multipart/form-data");
+        xhr.upload.addEventListener("progress", function (e) {
+            console.log(`${parseInt(e.loaded/e.total*100)}%`);
+        })
+        xhr.upload.addEventListener("load",function (e) {
+            console.log("上传完成")
+        })
+        xhr.send(fd);
+    }
+
+</script>
+</html>
