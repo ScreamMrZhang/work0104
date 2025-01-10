@@ -125,7 +125,7 @@
         autoplay: {
             delay: 3000,
             stopOnLastSlide: false,
-            disableOnInteraction: true,
+            disableOnInteraction: false,
         },
         pagination: {
             el: '.swiper-pagination',
