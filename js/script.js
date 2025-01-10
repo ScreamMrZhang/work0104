@@ -29,11 +29,11 @@
     var swiperWrapper = document.getElementById("swiperWrapper");
     async function makePostRequest() {
         try {
-            response = JSON.parse(localStorage.getItem("response"));
-            console.log(response)
-            if (!response) {
-                response = await sendPostRequest("https://netease-cloud-music-api-five-roan-88.vercel.app/homepage/block/page");
+            response = await sendPostRequest("https://netease-cloud-music-api-five-roan-88.vercel.app/homepage/block/page");
+            if (response) {
                 localStorage.setItem("response", JSON.stringify(response));
+            }else {
+                response = JSON.parse(localStorage.getItem("response"));
             }
             // 创建banner
             createBanners(response);
